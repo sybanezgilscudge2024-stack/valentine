@@ -107,6 +107,7 @@ body {
 </head>
 
 <body>
+<audio id="myAudio" src="audio.mp3"></audio>
 
 <div class="c1">
     <div class = "first">
@@ -196,6 +197,21 @@ const addTextClass = () => {
 
 // Run the function every 200ms
 const intervalId = setInterval(addTextClass, 150);
+
+
+
+
+
+window.addEventListener('load', () => {
+    const audio = document.getElementById('myAudio');
+    
+    // Try to play the audio
+    audio.play().catch(() => {
+        console.log("Autoplay prevented. User interaction required.");
+    });
+});
+
+
 
 
 </script>
