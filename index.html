@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: white;
+    font-family: "Comic Sans MS", cursive;
+    display: flex;
+    /* border: solid 20px pink; */
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+/* Container starts invisible */
+.c1 {
+    /* border: solid 2px pink; */
+    display: flex;
+    flex-wrap: wrap;           /* allow wrapping */
+    justify-content: center;   /* center children */
+    gap: 10px;
+    width: 50vw;                   /* responsive width */
+    font-size: clamp(1rem, 2vw, 2rem); /* responsive scaling */
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 6s ease forwards;
+    animation-delay: 1s;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* children */
+.first, .second, .third, .fourth, .fifth, .sixth{
+    /* border: solid 2px pink; */
+    flex: 0 1 auto;          /* don’t force grow, allow shrinking if necessary */
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;           /* optional: gives space around text */
+    white-space: nowrap;      /* prevent text from wrapping */
+}
+
+
+
+
+/* Smooth fade reveal */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.txt {
+    font-size: 3em;
+    color: #ff4d88;
+    opacity: 0;
+}
+.text {
+    
+    animation: pulse 3s infinite ease-in-out, opacity 1s ease forwards;
+    
+}
+
+
+@keyframes opacity {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Gentle breathing animation */
+@keyframes pulse {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Floating hearts appear after text */
+.heart {
+    position: absolute;
+    color: #ff99bb;
+    font-size: 20px;
+    opacity: 0;
+    animation: rise 6s linear infinite;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    80% { opacity: 1; }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="c1">
+    <div class = "first">
+    <h1 class = "txt">W</h1>
+    <h1 class = "txt">I</h1>
+    <h1 class = "txt">L</h1>
+    <h1 class = "txt">L</h1>
+    </div>
+    <div class = "second">
+    <h1 class = "txt">&nbsp;</h1>
+    <h1 class = "txt">Y</h1>
+    <h1 class = "txt">O</h1>
+    <h1 class = "txt">U</h1>
+    </div>
+    <div class = "third">
+    <h1 class = "txt">&nbsp;</h1>
+    <h1 class = "txt">B</h1>
+    <h1 class = "txt">E</h1>
+    </div>
+    <div class = "fourth">
+    <h1 class = "txt">&nbsp;</h1>
+    <h1 class = "txt">M</h1>
+    <h1 class = "txt">Y</h1>
+    </div>
+    <div class = "fifth">
+    <h1 class = "txt">&nbsp;</h1>
+    <h1 class = "txt">V</h1>
+    <h1 class = "txt">A</h1>
+    <h1 class = "txt">L</h1>
+    <h1 class = "txt">E</h1>
+    <h1 class = "txt">N</h1>
+    <h1 class = "txt">T</h1>
+    <h1 class = "txt">I</h1>
+    <h1 class = "txt">N</h1>
+    <h1 class = "txt">E</h1>
+    <h1 class = "txt">?</h1>
+    </div>
+    <div class = "sixth">
+    <h1 class = "txt">&nbsp;</h1>
+    <h1 class = "txt">💗</h1>
+    </div>
+    
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+/* Delay hearts until text appears */
+setTimeout(() => {
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (15 + Math.random() * 25) + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 6000);
+    }, 500);
+}, 5500);
+
+
+
+// Get all elements with class "txt"
+const txtElements = document.querySelectorAll('.txt');
+
+// Start index at 0
+let index = 0;
+
+// Function to add class "text" one by one
+const addTextClass = () => {
+    if (index < txtElements.length) {
+        txtElements[index].classList.add('text');
+        index++;
+    } else {
+        // Stop the interval when done
+        clearInterval(intervalId);
+    }
+};
+
+// Run the function every 200ms
+const intervalId = setInterval(addTextClass, 200);
+
+
+</script>
+
+</body>
+</html>
