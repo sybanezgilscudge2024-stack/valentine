@@ -11,7 +11,7 @@ body {
     background: white;
     font-family: "Comic Sans MS", cursive;
     display: flex;
-    /* border: solid 20px pink; */
+    border: solid 20px pink;
     justify-content: center;
     align-items: center;
     /* overflow: hidden; */
@@ -19,12 +19,13 @@ body {
 
 /* Container starts invisible */
 .c1 {
-    /* border: solid 2px pink; */
+    border: solid 2px pink;
     display: flex;
     flex-wrap: wrap;           /* allow wrapping */
     justify-content: center;   /* center children */
     gap: 10px;
-    width: 50vw;                   /* responsive width */
+    width: 70vw;                   /* responsive width */
+    height: 60vh;                  /* responsive height */
     font-size: clamp(1rem, 2vw, 2rem); /* responsive scaling */
     text-align: center;
     opacity: 0;
@@ -36,7 +37,7 @@ body {
 
 /* children */
 .first, .second, .third, .fourth, .fifth, .sixth{
-    /* border: solid 2px pink; */
+    border: solid 2px pink;
     flex: 0 1 auto;          /* don’t force grow, allow shrinking if necessary */
     min-width: 100px;
     display: flex;
