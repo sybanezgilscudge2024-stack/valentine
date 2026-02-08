@@ -36,7 +36,7 @@ body {
 }
 
 /* children */
-.first, .second, .third, .fourth, .fifth, .sixth{
+.first, .second, .third, .fourth, .fifth, .sixth, .seventh {
     /* border: solid 2px pink; */
     flex: 0 1 auto;          /* don’t force grow, allow shrinking if necessary */
     min-width: 100px;
@@ -100,6 +100,55 @@ body {
         transform: translateY(-10vh);
         opacity: 0;
     }
+
+
+}
+
+
+
+#yes, #no {
+
+
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ff4d88;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30vw;
+
+    font-size: 3rem;
+    height: 10vh;
+}
+
+#playBtn {
+
+    position: absolute;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #ff4d88;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30vw;
+
+    font-size: 3rem;
+    height: 10vh;
+}
+
+#playBtn:hover, #yes:hover, #no:hover {
+    background-color: #ffc9de;
+    color: rgb(133, 133, 133);
+}
+
+
+
+
+
+.remove {
+    display: none;
 }
 
 
@@ -107,9 +156,10 @@ body {
 </head>
 
 <body>
-<audio id="myAudio" src="audio.mp3"></audio>
+
 
 <div class="c1">
+    
     <div class = "first">
     <h1 class = "txt">W</h1>
     <h1 class = "txt">I</h1>
@@ -149,19 +199,35 @@ body {
     <h1 class = "txt">&nbsp;</h1>
     <h1 class = "txt">💗</h1>
     </div>
+    <div class = "seventh">
+    <button class = "txt" id="yes">YES</button>
+    <h1 class = "txt">&nbsp;</h1>
+    <button class = "txt" id="no">No..</button>
+    </div>
     
 
 
 
 
 </div>
-
-
-
-
+<button class = "c1" id="playBtn">OPEN</button>
+<audio id="myAudio" src="audio.mp3"></audio>
 
 
 <script>
+
+document.getElementById('playBtn').addEventListener('click', () => {
+    const audio = document.getElementById('myAudio');
+    setTimeout(() => {
+        play();
+    }, 1500); // Delay the text appearance by 1 second
+    
+    audio.play();
+    document.getElementById('playBtn').className = "remove"; // Hide the audio element after playing
+});
+
+
+function play() {
 /* Delay hearts until text appears */
 setTimeout(() => {
     setInterval(() => {
@@ -198,18 +264,8 @@ const addTextClass = () => {
 // Run the function every 200ms
 const intervalId = setInterval(addTextClass, 150);
 
+}
 
-
-
-
-window.addEventListener('load', () => {
-    const audio = document.getElementById('myAudio');
-    
-    // Try to play the audio
-    audio.play().catch(() => {
-        console.log("Autoplay prevented. User interaction required.");
-    });
-});
 
 
 
