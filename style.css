@@ -28,6 +28,55 @@ body {
     box-sizing: border-box;
 }
 
+
+.c2 {
+    /* border: solid 2px pink; */
+    /* position: absolute; */
+    top: 10%;
+    display: flex;
+    flex-wrap: wrap;           /* allow wrapping */
+    justify-content: center;   /* center children */
+    gap: 10px;
+    width: 70vw;                   /* responsive width */
+              /* responsive height */
+    font-size: clamp(1rem, 2vw, 2rem); /* responsive scaling */
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 6s ease forwards;
+    animation-delay: 1s;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+.letter {
+    /* border: solid 2px pink; */
+   background-color: rgb(255, 206, 206);
+   border-radius: 2rem;
+    display: flex;
+    flex-wrap: wrap;           /* allow wrapping */
+    justify-content: center;   /* center children */
+    gap: 10px;
+    width: 70vw;                   /* responsive width */
+              /* responsive height */
+    font-size: clamp(1rem, 2vw, 2rem); /* responsive scaling */
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 6s ease forwards;
+    animation-delay: 1s;
+    max-width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
 /* children */
 .first, .second, .third, .fourth, .fifth, .sixth, .seventh {
     /* border: solid 2px pink; */

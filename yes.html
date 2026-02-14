@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Thank You!</title>
+</head>
+<body>
+   
+    
+<div class="c2">
+    
+    <div class = "first">
+    <h1 class = "txt">T</h1>
+    <h1 class = "txt">H</h1>
+    <h1 class = "txt">A</h1>
+    <h1 class = "txt">N</h1>
+    <h1 class = "txt">K</h1>
+    </div>
+     <div class = "second">
+    <h1 class = "txt">&nbsp;</h1>
+    <h1 class = "txt">Y</h1>
+    <h1 class = "txt">O</h1>
+    <h1 class = "txt">U</h1>
+    </div>
+
+
+</div>
+<div class = "letter">
+
+
+    <p> Thank you 'gel! Hehehehehe bitaw salamat kaayu. 
+        Even now ga lisud gihapon kog tuo na naabot ta sa inani na situation ron, 
+        kung pwede palang nako maka isturya akong past self, 
+        murag di sad to siya ka tuo HAHAHAHHAHA kay sauna bya 
+        'gel kaning mga laag²/hangout² nato na kita ra duha 
+        imagination ra ko taman ani. Everyday jud ko thankful 
+        sa blessing na gi hayag ni Lord shesh 😇 </p>
+</div>
+<div class = "letter">
+    <p> Na curious sad bya ko 'gel. Like what makes you accept my courtship? 
+        Kay the night before bitaw ato 'gel daghan kaykog ge overthink, 
+        like what if e reject ko nimo? Unsaun nako pag counter ana? Or 
+        basin mo ingon ka na paspas ra kayko, mga inana bitaw na thoughts, 
+        but nope, ni accept manka largo, na speechless ko kajut ato, mejo 
+        ga lisud sadkog tuo BWHAHHAHAHAHAH pero bitaw 'gel, nganu ge accept 
+        ko nimo largo? Hehehee sturyahan ra nato na puhon. </p>
+</div>
+<div class = "letter">
+    <p> Willing ko mo hulat 'gel, kung sa english pa I'm willing to wait, 
+        kung sa tagalog pa willing akong mag hintay, bisag unsa pana nga 
+        language my answer will still be the same, so you don't have to 
+        worry about me 'gel kung kaya ba nako, buang ako pa ka gahi nako. </p>
+</div>
+<div class = "letter">
+    <p> Btw 'gel, naa koy e hatag sa imo sa lunes, plano nako e hatag 
+        unta ron but since busy ka sa lunes nlng, wa sad nako na hatag 
+        atong Friday kay si tiktok dugay kaayu ge deliver akong parcel 
+        HAHAHAHHA.</p>
+    <p> Thank you again 'gel... Sa tanan    </p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+<script>
+
+
+/* Delay hearts until text appears */
+setTimeout(() => {
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (15 + Math.random() * 25) + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 6000);
+    }, 200);
+}, 100);
+
+
+
+// Get all elements with class "txt"
+const txtElements = document.querySelectorAll('.txt');
+
+// Start index at 0
+let index = 0;
+
+// Function to add class "text" one by one
+const addTextClass = () => {
+    if (index < txtElements.length) {
+        txtElements[index].classList.add('text');
+        index++;
+    } else {
+        // Stop the interval when done
+        clearInterval(intervalId);
+    }
+};
+
+// Run the function every 200ms
+const intervalId = setInterval(addTextClass, 150);
+
+
+
+
+
+
+</script>
+
+</html>

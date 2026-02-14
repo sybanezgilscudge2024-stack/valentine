@@ -3,158 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Valentine</title>
-
-<style>
-body {
-    margin: 0;
-    height: 100vh;
-    background: white;
-    font-family: "Comic Sans MS", cursive;
-    display: flex;
-    /* border: solid 20px pink; */
-    justify-content: center;
-    align-items: center;
-    /* overflow: hidden; */
-}
-
-/* Container starts invisible */
-.c1 {
-    /* border: solid 2px pink; */
-    display: flex;
-    flex-wrap: wrap;           /* allow wrapping */
-    justify-content: center;   /* center children */
-    gap: 10px;
-    width: 70vw;                   /* responsive width */
-              /* responsive height */
-    font-size: clamp(1rem, 2vw, 2rem); /* responsive scaling */
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 6s ease forwards;
-    animation-delay: 1s;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* children */
-.first, .second, .third, .fourth, .fifth, .sixth, .seventh {
-    /* border: solid 2px pink; */
-    flex: 0 1 auto;          /* don’t force grow, allow shrinking if necessary */
-    min-width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;           /* optional: gives space around text */
-    white-space: nowrap;      /* prevent text from wrapping */
-}
-
-
-
-
-
-
-/* Smooth fade reveal */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.txt {
-    font-size: 3em;
-    color: #ff4d88;
-    opacity: 0;
-}
-.text {
-    
-    animation: pulse 3s infinite ease-in-out, opacity 1s ease forwards;
-    
-}
-
-
-@keyframes opacity {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-/* Gentle breathing animation */
-@keyframes pulse {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(20px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Floating hearts appear after text */
-.heart {
-    position: absolute;
-    color: #ff99bb;
-    font-size: 20px;
-    opacity: 0;
-    animation: rise 6s linear infinite;
-}
-
-@keyframes rise {
-    0% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-    80% { opacity: 1; }
-    100% {
-        transform: translateY(-10vh);
-        opacity: 0;
-    }
-
-
-}
-
-
-
-#yes, #no {
-
-
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #ff4d88;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-   width: 300px;
-
-    font-size: 3rem;
-    height: 100px;
-}
-
-#playBtn {
-
-    position: absolute;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #ff4d88;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 300px;
-
-    font-size: 3rem;
-    height: 100px;
-}
-
-#playBtn:hover, #yes:hover, #no:hover {
-    background-color: #ffc9de;
-    color: rgb(133, 133, 133);
-}
-
-
-
-
-
-.remove {
-    display: none;
-}
-
-
-
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -202,10 +51,10 @@ body {
     <h1 class = "txt">💗</h1>
     </div>
     <div class = "seventh">
-    <button class="txt" id="yes" onclick="window.location.href='flower.html'">YES</button>
+    <button class="txt" id="yes" onclick="window.location.href='yes.html'">YES</button>
 
     <h1 class = "txt">&nbsp;</h1>
-    <button class="txt" id="no" onclick="window.location.href='no.html'">No..</button>
+    <button class="txt" id="no" onclick="window.location.href='no.html'">No....</button>
 
     </div>
     
@@ -309,4 +158,3 @@ const intervalId = setInterval(addTextClass, 150);
 
 </body>
 </html>
-
